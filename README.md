@@ -5,7 +5,7 @@ Web app to manage, update and care WP sites
 
 Before install dependencies for frontend app, you will need:
 
-- Node 16
+- Node 20
 
 Enter into frontend_admin directory and run: 
 
@@ -18,5 +18,5 @@ pnpm install
 Enter into frontend_admin directory and run: 
 
 ```
-pnpm run dev
+pnpm dev
 ```
