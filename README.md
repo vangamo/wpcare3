@@ -3,6 +3,10 @@ Web app to manage, update and care WP sites
 
 ## Install frontend for development
 
+Before install dependencies for frontend app, you will need:
+
+- Node 16
+
 Enter into frontend_admin directory and run: 
 
 ```
