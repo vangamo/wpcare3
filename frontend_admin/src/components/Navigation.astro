@@ -1,5 +1,5 @@
 ---
-import FeatherIcon from '../components/FeatherIcon.astro';
+import NavMenuItem from './NavMenuItem.astro';
 
 const menu = [
   {
@@ -72,17 +72,7 @@ const menu = [
   <nav class="sidenav_menu">
     {
       menu.map(title => 
-        <div class="sidenav__menuheading">{title.name}</div>
-        {
-          title.items.map(item =>
-            <a class="sidenav__menulink active" href={item.link} aria-current="page">
-              <span class="sidenav__menulink--icon">
-                <FeatherIcon icon={item.icon} size="24" />
-              </span>
-              {item.name}
-            </a>
-          )
-        }
+        <NavMenuItem name={title.name} items={title.items} />
       )
     }
   </nav>

@@ -1,0 +1,17 @@
+---
+import FeatherIcon from '../components/FeatherIcon.astro';
+
+const {name, items} = Astro.props;
+
+---
+<div class="sidenav__menuheading">{name}</div>
+{
+  items.map(item =>
+    <a class="sidenav__menulink active" href={item.link} aria-current="page">
+      <span class="sidenav__menulink--icon">
+        <FeatherIcon icon={item.icon} size="24" />
+      </span>
+      {item.name}
+    </a>
+  )
+}
