@@ -1,0 +1,35 @@
+---
+import Menu_Icon from '../images/feather-icons/menu.svg';
+import Search_Icon from '../images/feather-icons/search.svg';
+
+import Activity_Icon from '../images/feather-icons/activity.svg';
+import Clock_Icon from '../images/feather-icons/clock.svg';
+import Folder_Icon from '../images/feather-icons/folder.svg';
+import Chevron_Right_Icon from '../images/feather-icons/chevron-right.svg';
+import Layout_Icon from '../images/feather-icons/layout.svg';
+import Briefcase_Icon from '../images/feather-icons/briefcase.svg';
+import Sliders_Icon from '../images/feather-icons/sliders.svg';
+import Package_Icon from '../images/feather-icons/package.svg';
+import File_Plus_Icon from '../images/feather-icons/file-plus.svg';
+
+import No_Icon from '../images/feather-icons/cloud-rain.svg';
+
+const ICONS_LIST={
+  "menu": Menu_Icon,
+  "search": Search_Icon,
+  "activity": Activity_Icon,
+  "clock": Clock_Icon,
+  "folder": Folder_Icon,
+  "chevron-right": Chevron_Right_Icon,
+  "layout": Layout_Icon,
+  "briefcase": Briefcase_Icon,
+  "sliders": Sliders_Icon,
+  "package": Package_Icon,
+  "file-plus": File_Plus_Icon,
+};
+
+const {icon,size} = Astro.props;
+const altText = icon.charAt(0).toUpperCase() + icon.slice(1) + ' icon';
+const iconImage = ICONS_LIST[icon] ? ICONS_LIST[icon].src : No_Icon.src;
+---
+<img src={iconImage} alt={altText} width={size} />
