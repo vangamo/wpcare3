@@ -1,8 +1,15 @@
 ---
+import Navigation from '../components/Navigation.astro';
 
+import '../styles/main.css';
+
+title: 'My First Blog Post'
+pubDate: '2023-11-11'
+description: 'This is the first post of my new Astro blog.'
+author: 'Astro Learner'
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,7 +20,10 @@
 	<body>
 		<h1>WPCare</h1>
 		<p>
-			<a href="./about">About page</a>
+			<Navigation />
 		</p>
+		<script>
+			import "../scripts/main.js";
+		</script>
 	</body>
 </html>
