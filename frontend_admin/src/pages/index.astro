@@ -1,8 +1,7 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Links from '../components/Links.astro';
 import FeatherIcon from '../components/FeatherIcon.astro';
-
-import '../styles/main.scss';
 
 const name="Dashboard";
 const title="Dashboard";
@@ -13,136 +12,29 @@ pubDate: '2023-11-11'
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
 ---
+<BaseLayout name={name} title={title} description={description}>
+	<div class="row-1">
+		<div class="box">
+			<div class="box__title">
+				<h3 class="box__title__text">Sites</h3>
+			</div>
+			<div class="box__content">
+				<table></table>
+			</div>
+		</div>
+	</div>
+	<div class="row-1">
+		<div class="box">
+			<div class="box__title">
+				<h3 class="box__title__text">Former content</h3>
+			</div>
+			<div class="box__content">
+				<h1>WPCare</h1>
+				<p>
+					<Links />
+				</p>
+			</div>
+		</div>
+	</div>
+</BaseLayout>
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<a rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>WPCare</title>
-	</head>
-	<body id="app">
-		<header class="header shadow">
-      <button class="btn btn-icon">
-        <FeatherIcon icon="menu" size="24" />
-      </button>
-      <a href="./index.html">
-        <h1 class="header__title">WPCare</h1>
-      </a>
-      <form action="#">
-        <div class="inputgroup null">
-          <input class="inputgroup--input" type="text" name="" id="" value="" />
-          <FeatherIcon icon="search" size="16" />
-        </div>
-      </form>
-    </header>
-		<section class="sidenav shadow-right todo-hidden">
-      <nav class="sidenav_menu">
-        <div class="sidenav__menuheading">Overview</div>
-        <a class="sidenav__menulink active" to="/" aria-current="page">
-          <span class="sidenav__menulink--icon">
-            <FeatherIcon icon="activity" size="24" />
-          </span>
-          Dashboard
-        </a>
-        {/*
-        <a class="sidenav__menulink">
-          <span class="sidenav__menulink--icon">
-            <FeatherIcon icon="clock" size="24" />
-          </span>
-          Load times
-        </a>
-        */}
-        <div class="sidenav__menuheading">Webs</div>
-        <a class="sidenav__menulink" to="/sites">
-          <span class="sidenav__menulink--icon">
-            <FeatherIcon icon="folder" size="24" />
-          </span>
-          Sites
-          <span class="sidenav__menulink--arrow">
-            <FeatherIcon icon="chevron-right" size="24" />
-          </span>
-        </a>
-        {/*
-        <a class="sidenav__menulink">
-          <span class="sidenav__menulink--icon">
-            <FeatherIcon icon="layout" size="24" />
-          </span>
-          Pages
-          <span class="sidenav__menulink--arrow">
-            <FeatherIcon icon="chevron-right" size="24" />
-          </span>
-        </a>
-        <a class="sidenav__menulink" to="/clients/">
-          <span class="sidenav__menulink--icon">
-            <FeatherIcon icon="briefcase" size="24" />
-          </span>
-          Clients
-          <span class="sidenav__menulink--arrow">
-            <FeatherIcon icon="chevron-right" size="24" />
-          </span>
-        </a>
-        */}
-        <div class="sidenav__menuheading">WP</div>
-        <a class="sidenav__menulink" to="/plugins/">
-          <span class="sidenav__menulink--icon">
-            <FeatherIcon icon="sliders" size="24" />
-          </span>
-          Plugins
-          <span class="sidenav__menulink--arrow">
-            <FeatherIcon icon="chevron-right" size="24" />
-          </span>
-        </a>
-        <div class="sidenav__menuheading">Tests</div>
-        <div class="sidenav__menuheading">Tools</div>
-        <a class="sidenav__menulink" to="/backup">
-          <span class="sidenav__menulink--icon">
-            <FeatherIcon icon="package" size="24" />
-          </span>
-          Import/Export
-        </a>
-      </nav>
-      <dl class="sidenav_footer">
-        <dt class="sidenav_footer--subtitle">Logged in as:</dt>
-        <dd class="sidenav_footer--title">Christine de Pizan</dd>
-      </dl>
-    </section>
-		<main class="main">
-			<section class="{name}">
-				<div class="main__background"></div>
-				<div class="main__wrapper">
-					<div class="main__header">
-						<h2 class="main__title">{title}</h2>
-						<p class="main__description">{description}</p>
-					</div>
-					<div class="content">
-						<div class="row-1">
-							<div class="box">
-								<div class="box__title">
-									<h3 class="box__title__text">Sites</h3>
-									<div class="box__title__toolbox">
-										<button onClick={() => setShownEditRow(!isShownEditRow)}>
-											<FeatherIcon icon="file-plus" size="24" />
-										</button>
-									</div>
-								</div>
-								<div class="box__content">
-									<table></table>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-
-		<h1>WPCare</h1>
-		<p>
-			<Navigation />
-		</p>
-		<script>
-			import "../scripts/main.js";
-		</script>
-	</body>
-</html>

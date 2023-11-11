@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatherIcon from '../components/FeatherIcon.astro';
+
+const name="Sites";
+const title="Sites";
+const description="Sites";
+
+---
+<BaseLayout name={name} title={title} description={description}>
+	<div class="row-1">
+		<div class="box">
+			<div class="box__title">
+				<h3 class="box__title__text">Sites page</h3>
+				<div class="box__title__toolbox">
+					<button onClick={() => setShownEditRow(!isShownEditRow)}>
+						<FeatherIcon icon="file-plus" size="24" />
+					</button>
+				</div>
+			</div>
+			<div class="box__content">
+				<table></table>
+			</div>
+		</div>
+	</div>
+</BaseLayout>
+

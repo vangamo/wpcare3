@@ -1,4 +1,88 @@
 ---
+import FeatherIcon from '../components/FeatherIcon.astro';
 ---
-<a href="./">Home</a>
-<a href="./about">About page</a>
+<section class="sidenav shadow-right hidden">
+  <nav class="sidenav_menu">
+    <div class="sidenav__menuheading">Overview</div>
+    <a class="sidenav__menulink active" to="/" aria-current="page">
+      <span class="sidenav__menulink--icon">
+        <FeatherIcon icon="activity" size="24" />
+      </span>
+      Dashboard
+    </a>
+    {/*
+    <a class="sidenav__menulink">
+      <span class="sidenav__menulink--icon">
+        <FeatherIcon icon="clock" size="24" />
+      </span>
+      Load times
+    </a>
+    */}
+    <div class="sidenav__menuheading">Webs</div>
+    <a class="sidenav__menulink" href="/sites">
+      <span class="sidenav__menulink--icon">
+        <FeatherIcon icon="folder" size="24" />
+      </span>
+      Sites
+      <span class="sidenav__menulink--arrow">
+        <FeatherIcon icon="chevron-right" size="24" />
+      </span>
+    </a>
+    {/*
+    <a class="sidenav__menulink">
+      <span class="sidenav__menulink--icon">
+        <FeatherIcon icon="layout" size="24" />
+      </span>
+      Pages
+      <span class="sidenav__menulink--arrow">
+        <FeatherIcon icon="chevron-right" size="24" />
+      </span>
+    </a>
+    <a class="sidenav__menulink" to="/clients/">
+      <span class="sidenav__menulink--icon">
+        <FeatherIcon icon="briefcase" size="24" />
+      </span>
+      Clients
+      <span class="sidenav__menulink--arrow">
+        <FeatherIcon icon="chevron-right" size="24" />
+      </span>
+    </a>
+    */}
+    <div class="sidenav__menuheading">WP</div>
+    <a class="sidenav__menulink" to="/plugins/">
+      <span class="sidenav__menulink--icon">
+        <FeatherIcon icon="sliders" size="24" />
+      </span>
+      Plugins
+      <span class="sidenav__menulink--arrow">
+        <FeatherIcon icon="chevron-right" size="24" />
+      </span>
+    </a>
+    <div class="sidenav__menuheading">Tests</div>
+    <div class="sidenav__menuheading">Tools</div>
+    <a class="sidenav__menulink" to="/backup">
+      <span class="sidenav__menulink--icon">
+        <FeatherIcon icon="package" size="24" />
+      </span>
+      Import/Export
+    </a>
+  </nav>
+  <dl class="sidenav_footer">
+    <dt class="sidenav_footer--subtitle">Logged in as:</dt>
+    <dd class="sidenav_footer--title">Christine de Pizan</dd>
+  </dl>
+</section>
+<script>
+  const nav = document.querySelector('.sidenav');
+  const menuIcon = document.querySelector('.header .btn.btn-icon');
+
+  function handleClickMenuButton(event) {
+    event.preventDefault();
+    nav.classList.toggle('hidden');
+  }
+
+  menuIcon.addEventListener('click', handleClickMenuButton);
+
+  console.log(nav);
+  console.log(menuIcon);
+</script>
