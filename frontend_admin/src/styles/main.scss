@@ -25,6 +25,8 @@
  */
 
 /* Core */
+@import 'core/mixins';
+
 @import 'layout/reset';
 @import 'layout/colors';
 @import 'layout/boxes';
@@ -58,6 +60,24 @@
   /*border-radius: 3px;*/
 }
 
-.hidden {
-  display: block;
+.header  {
+  .mobile,.tablet,.desktop {
+    display: none;
+  }
+
+  @include mobile_only {
+    .mobile {
+      display: block;
+    }
+  }
+  @include tablet {
+    .tablet {
+      display: block;
+    }
+  }
+  @include desktop {
+    .desktop {
+      display: block;
+    }
+  }
 }

@@ -2,12 +2,12 @@
 import FeatherIcon from '../components/FeatherIcon.astro';
 
 const {name, items} = Astro.props;
-
+const pathname = new URL(Astro.request.url).pathname;  // Starts with "/".
 ---
 <div class="sidenav__menuheading">{name}</div>
 {
   items.map(item =>
-    <a class="sidenav__menulink TODO-active" href={item.link} aria-current="page">
+    <a class={(item.link === '/' && pathname === '/') || (item.link !== '/' && pathname.startsWith(item.link)) ? "sidenav__menulink active" : "sidenav__menulink"} href={item.link} aria-current="page">
       <span class="sidenav__menulink--icon">
         <FeatherIcon icon={item.icon} size="24" />
       </span>

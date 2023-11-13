@@ -10,7 +10,12 @@
 
 .sidenav.hidden {
   -webkit-transform: translateX(-100%);
-  transform: translateX(-100%)
+  transform: translateX(-100%);
+
+  @include desktop() {
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 
 .sidenav_menu {
