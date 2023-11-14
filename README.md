@@ -5,12 +5,12 @@ Web app to manage, update and care WP sites
 
 Before install dependencies for frontend app, you will need:
 
-- Node 20
+- Bun (to install bun: `curl -fsSL https://bun.sh/install | bash`)
 
 Enter into frontend_admin directory and run: 
 
 ```
-pnpm install
+bun install
 ```
 
 ## Run frontend for development
@@ -18,5 +18,5 @@ pnpm install
 Enter into frontend_admin directory and run: 
 
 ```
-pnpm dev
+bunx --bun astro dev
 ```
