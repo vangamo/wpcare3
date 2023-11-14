@@ -2,10 +2,32 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FeatherIcon from '../components/FeatherIcon.astro';
 import Table from '../components/Table.jsx';
-
 const name="Sites";
 const title="Sites";
 const description="Sites";
+
+if (Astro.request.method === "POST") {
+	try {
+		const data = await Astro.request.formData();
+    const pagename = data.get("pagename");
+    console.log('pagename', pagename);
+    // Do something with the data
+		/*
+		const content = 'Some content!';
+		
+		fs.writeFile('/Users/joe/test.txt', content, err => {
+			if (err) {
+				console.error(err);
+			}
+			// file written successfully
+		});
+		*/
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 
 ---
 <BaseLayout name={name} title={title} description={description}>
@@ -14,12 +36,19 @@ const description="Sites";
 			<div class="box__title">
 				<h3 class="box__title__text">Sites page</h3>
 				<div class="box__title__toolbox">
-					<button onClick={() => setShownEditRow(!isShownEditRow)}>
+					<button>
 						<FeatherIcon icon="file-plus" size="24" />
 					</button>
 				</div>
 			</div>
 			<div class="box__content">
+				<form method="POST">
+					<label>
+						Page name:
+						<input type="text" name="pagename" />
+					</label>
+					<button>Submit</button>
+				</form>
 				<Table client:load messages={['Python', 'Wordpress', 'Astro']}></Table>
 				<Table client:visible messages={['Python', 'Wordpress', 'Astro']}></Table>
 				<Table messages={['Python', 'Wordpress', 'Astro']}></Table>
